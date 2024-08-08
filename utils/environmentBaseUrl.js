@@ -4,12 +4,12 @@ export default{
         suffix: '',
     },
     local: {
-        api: 'XXXXXXXXXXXXXXXXXXXXX',
-        home: '',
+        api: 'https://news.ycombinator.com/newest',
+        home: 'https://news.ycombinator.com/',
     },
     production: {
-        api: 'XXXXXXXXXXXXXXXXXXXXX',
-        home: '',
+        api: 'https://news.ycombinator.com/newest',
+        home: 'https://news.ycombinator.com/',
     },
     staging: {
         api: 'XXXXXXXXXXXXXXXXXXXXX',

@@ -1,4 +1,5 @@
 // @ts-check
+import baseEnvUrl from './utils/environmentBaseUrl.js'
 const { defineConfig, devices } = require('@playwright/test');
 
 
@@ -53,6 +54,13 @@ module.exports = defineConfig({
       name: 'all-browsers-and-tests',
       use: { 
         baseURL: 'httpe://playwright.dev/'
+      },
+    },
+    //example only
+    {
+      name: 'local',
+      use: {
+        baseURL: baseEnvUrl.local.home,
       },
     },
 
