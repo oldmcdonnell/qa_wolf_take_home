@@ -1,4 +1,4 @@
-export default{
+const environmentBaseUrl = {
     ci: {
         prefix: '',
         suffix: '',
@@ -15,4 +15,6 @@ export default{
         api: 'XXXXXXXXXXXXXXXXXXXXX',
         home: '',
     },
-}
+};
+
+module.exports = environmentBaseUrl;

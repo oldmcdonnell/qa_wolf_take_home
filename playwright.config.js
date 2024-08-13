@@ -1,7 +1,9 @@
 // @ts-check
-import baseEnvUrl from './utils/environmentBaseUrl.js'
+const environmentBaseUrl = require('./utils/environmentBaseUrl');
 const { defineConfig, devices } = require('@playwright/test');
 
+const environment = process.env.NODE_ENV || 'local';
+const baseURL = environmentBaseUrl[environment].api;
 
 /**
  * Read environment variables from file.
@@ -27,9 +29,8 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    baseURL: baseURL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -60,7 +61,7 @@ module.exports = defineConfig({
     {
       name: 'local',
       use: {
-        baseURL: baseEnvUrl.local.home,
+        baseURL: environmentBaseUrl.local.home,
       },
     },
 
